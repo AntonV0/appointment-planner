@@ -34,9 +34,8 @@ export const ContactForm = ({
           onChange={(e) => setPhone(e.target.value)}
           required
           placeholder="Phone Number"
-          // Regex for UK landlines and mobile
-          landlinePattern="(\s*\(?0\d{4}\)?\s*\d{6}\s*)|(\s*\(?0\d{3}\)?\s*\d{3}\s*\d{4}\s*)"
-          mobilePattern="^07([\d]{3})[(\D\s)]?[\d]{3}[(\D\s)]?[\d]{3}$"
+          // Regex for UK mobile numbers
+          pattern="^07([\d]{3})[(\D\s)]?[\d]{3}[(\D\s)]?[\d]{3}$"
         />
       </label>
       <br />
