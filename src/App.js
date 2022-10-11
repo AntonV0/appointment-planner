@@ -15,12 +15,12 @@ function App() {
   };
 
   // Add new contacts
-  const addContact = (name, number, email) => {
+  const addContact = (name, phone, email) => {
     setContacts([
       ...contacts,
       {
         name: name,
-        number: number,
+        phone: phone,
         email: email
       }
     ]);
