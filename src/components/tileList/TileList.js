@@ -7,6 +7,7 @@ export const TileList = ({ tiles }) => {
   return (
     <div>
       {tiles.map((tile, index) => (
+        // Render Tile with props
         <Tile 
           key={index} 
           tile={tile} 
