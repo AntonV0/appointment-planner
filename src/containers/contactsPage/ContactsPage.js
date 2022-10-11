@@ -6,7 +6,7 @@ import { TileList } from "../../components/tileList/TileList";
 export const ContactsPage = ({ contacts, addContact }) => {
   // Define state variables
   const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [duplicate, setDuplicate] = useState(false);
 
@@ -14,9 +14,9 @@ export const ContactsPage = ({ contacts, addContact }) => {
     e.preventDefault();
     // Add contact info and clear data if contact name is not a duplicate
     if (!duplicate) {
-      addContact(name, number, email);
+      addContact(name, phone, email);
       setName("");
-      setNumber("");
+      setPhone("");
       setEmail("");
     }
   };
@@ -48,8 +48,8 @@ export const ContactsPage = ({ contacts, addContact }) => {
         <ContactForm 
           name={name}
           setName={setName}
-          number={number}
-          setNumber={setNumber}
+          phone={phone}
+          setPhone={setPhone}
           email={email}
           setEmail={setEmail}
           handleSubmit={handleSubmit}

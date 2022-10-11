@@ -10,6 +10,55 @@ export const ContactForm = ({
   handleSubmit
 }) => {
   return (
-    ContactForm
+    <form onSubmit={handleSubmit}>
+
+      {/* Contact name input */}
+      <label>
+        <input
+          name="name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          placeholder="Contact Name"
+        />
+      </label>
+      <br />
+
+      {/* Phone number input */}
+      <label>
+        <input
+          name="phone"
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+          placeholder="Phone Number"
+          // Regex for UK landlines and mobile
+          landlinePattern="(\s*\(?0\d{4}\)?\s*\d{6}\s*)|(\s*\(?0\d{3}\)?\s*\d{3}\s*\d{4}\s*)"
+          mobilePattern="^07([\d]{3})[(\D\s)]?[\d]{3}[(\D\s)]?[\d]{3}$"
+        />
+      </label>
+      <br />
+
+      {/* Email address input */}
+      <label>
+        <input 
+          name="email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          placeholder="Email Address"
+        />
+      </label>
+      <br />
+
+      {/* Submit */}
+      <input 
+        type="submit"
+        value="Add Contact"
+      />
+    </form>
   );
 };
